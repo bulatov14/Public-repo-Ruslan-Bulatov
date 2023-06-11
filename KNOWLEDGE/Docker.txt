@@ -1,0 +1,43 @@
+
+		Docker
+	
+	docker		-show help list
+	
+	docker run --help 		show help about run command
+	
+	docker info
+	docker images
+	docker ps		   -info about containers
+	
+	docker stop container_id
+	docker start container_id
+	docker pause container_id
+	docker unpause container_id
+	
+	docker restart container_id
+	
+	docker login
+	docker logout
+	
+	hub.docker.com
+	
+	docker pull openjdk		-download image openjdk
+		
+	docker run -it --name MyJava openjdk		-itinteravtive mode, name "MyJava"
+	or
+	docker run -p 80:80 image_id
+	
+	Ctrl + D 		-exit
+	
+	docker start MyJava		-start container "MyJava"
+	
+		VScode - download extensions
+	-Docker
+	-Dev containers
+	
+	Create Dockerfile with code from Dockerhub
+	docker build .		-build 
+	
+	docker image rm image_id		-delete image
+	
+	
