@@ -1,0 +1,127 @@
+	
+		GIT
+	
+	git init	 -create repo
+	
+	git config --global user.name "Ruslan Bulatov"
+	git config --global user.email "rf011@yandex.ru"
+	
+	cat .git/config 	-view user
+	
+	git config --unset user.name 		-delete local user
+	
+	git config --unset user.email 		-delete local email
+	or
+	git gonfig --remove-section user 	-delete all section user
+	
+	git config --global core.editor "'D:\Install\notepad portable\notepad.exe' -multiInst -notabbar -nosession -noPlugin"
+	or
+	git config --global core.editor notepad
+	
+	settings    --system 			            etc/gitconfig
+				--global 			user's      ~/.gitconfig
+				--local (default)	project's   .git/config
+	
+	git config --list
+	git config --list --global
+	
+	git status
+	
+	git config --global alias.c config 		create alias for config "c" 
+	
+	git config --global alias.cgl 'config --global --list' 		-it possible now to use "git cgl"
+
+	git config -h 			-function help
+	
+		Structure
+	
+	Local - Index - Repo
+	
+	git add index.html 		-add file to index
+	
+	git commit
+	
+	git commit -m 'Fix ...' 		-commit without editor, залив на локал репо 
+	
+	git add src 		-добавил папку в индекс
+	git add . 		-передаем весь текущий каталог
+	
+	git reset head <file> 		-сбросить индекс для <file>
+	
+	создать файл .gitignore в корне, указать файлы кот. git будет игнорировать
+	
+	ls 		    -показ папок
+	ls -a 		-показ папок и файлов
+	
+	git clone https://github.com/bulatov14/mytest - копия репозитория на локал
+	
+	git add      	добавил в индекс
+	git commit   	добавил в локал репо
+	git push     	смержил на github 
+	
+	git fetch    просмотр изменений на github, которых пока нет на локал репо
+	git pull   - залить github на локал репо
+	
+	master -        локал раб ветка, в локал репо
+	origin master - ветка на github 
+	
+	git log - 						просмотр всех коммитов
+	git log --author bulatov14 - 	просмотр коммитов конкретного автора
+	
+	git show <number commit> - просмотр изменений в конкретном коммите по строкам
+	
+	git show - просмотр изменений в последнем коммите
+	
+	git blame 0.txt - кто какие изменения сделал в файле
+	
+	git blame 0.txt | grep 123 - кто внес изменения с добавлением строки 123
+	
+	git blame 0.txt | grep bulatov14 - какие изменения вносил автор
+	
+	git diff - просмотр изменений в файле еще не индексированным
+	
+	echo "new line" >> new.file
+	
+	git reset head~1 -отмена коммита на 1 шаг назад
+	
+	git checkout 0.txt -откат последнего изменения в файле
+	
+	git checkout .     -откат последнего изменения для всех файлов данного репо
+	
+	git branch 1branch -создать новую ветку на локал репо
+	
+	git branch -просмотр всех веток
+	
+	git checkout 1branch -переключиться на др ветку
+	
+	git push -u origin 1branch -создание ветки на github 
+	
+		чтобы смержить
+	
+	git checkout -          переключение на мастер        
+	git merge 1branch
+	git push
+	
+	git branch -m 1branch 2branch -переименование ветки на локал репо
+	
+		переименование ветки на github 
+	
+	git push origin :1branch      удаление старой ветки 
+	git push -u origin 2branch    создание новой ветки на github, автомат. залив с локал репо на github 
+	
+	git branch -d 0branch -удаление ветки на локал репо
+	
+		вернем удаленную локально ветку с github 
+	
+	git fetch origin 0branch
+	git checkout 0branch       -переключаемся на нее
+	git branch                 - проверка
+	
+	git gui&     запуск git GUI
+	
+	
+	
+	
+	
+	
+	
