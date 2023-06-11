@@ -1,0 +1,9 @@
+
+	SSH
+	
+	Windows 10/11 - Powershell
+	
+	ssh root@100.150.200.250
+	
+	
+	
