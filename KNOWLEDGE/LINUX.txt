@@ -1,0 +1,125 @@
+	
+		LINUX
+		
+	mkdir folder		-create folder
+	
+	cd folder		-go to inside folder
+	
+	cd ..		-go up 1 level
+	cd ../..		-go up 2 levels
+	
+	ls		-list directory, show folders, files
+
+	ls -a		-show folders, files including hidden
+	
+	ls -l		-long view
+
+	ls -R		-show tree of folders and files
+	
+	ls folder_1 folder_2		-show files in folder_1 and folder_2
+	
+	pwd		-print working directory
+	
+	clear		-clear screen
+	
+	ls --help		
+	
+	touch file.txt		-create new file
+	
+	rmdir folder		-remove empty folder
+	
+	rm -R folder		-remove folder, including files
+	
+	sudo chmod 755 file.txt		-change rights if permission denied
+	
+	mv folder_1/file.txt folder_2		-move file from folder_1 to folder_2
+	
+	mv folder_1/file.txt folder_1/file_3.txt		-rename file
+	
+	cp folder_1/file.txt folder_2		-copy file to folder_2
+	
+	cp folder_1/* folder_2		-copy all files from folder_1 to folder_2
+	
+	cp -r folder_1/* folder_2		-copy all files including inner folders and files
+	
+	cat 1.txt		-view file
+	
+	cat 1.txt 2.txt		-view both files in the console
+	
+	less 1.txt		-view file
+	
+	/ipsum		-search in the file
+	
+	q		-escape
+	
+	nano 1.txt		-view/edit file
+	
+	grep line file.txt		-search "line" in the file
+	
+	grep -i line file.txt		-search without Register dependence "line" in the file including "LINE"
+	
+	grep -v line file.txt		-search strings not containing "line"
+	
+	grep -c linefile.txt		-count strings having "line"
+	
+	grep -ic linefile.txt		-count strings without Register dependence having "line" 
+	
+	grep -R line folder		-search files with text "line" in the folder
+	
+	find . -name file.txt		-search file in the current folder with particular name
+
+	find . -name *.txt		
+	
+	find . -type d -name "f*"		-search in the current folder directory with name f*
+	
+	rm folder/file.txt		-delete file
+	
+	echo 123 > file.txt		-create file with text "123"
+	
+	echo 456 > file.txt		-overwriting info in the file, we see only "456" without "123"
+	
+	echo 456 >> file.txt	-add "456" as a new string under "123"
+	
+	echo 789 > file2.txt	
+	cat file.txt file2.txt > file3.txt 		-sum info from 2 files into the 1 file
+	
+	cat file3.txt | grep 7		-search string containing "7"
+	
+	ls | grep file		-search and show folder and files with name containing "file" 
+	
+	ps		-show processes
+	ps x
+	ps u
+	ps au
+	ps aux
+	
+	kill 52 		-kill process with PID 52
+	
+	top		-show processes
+	htop
+	
+	ping google.com
+	
+	ping -c 3 google.com 	-3 packages
+	
+	ping -c 3 -i 2 google.com 	-each 2 seconds
+	
+	curl 		-degault GET request
+	
+	curl https://reqres.in/api/users?page=2
+	
+	curl -X POST https://reqres.in/api/login --data "email=eve.holt@reqres.in" --data "password=cityslicka"
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
