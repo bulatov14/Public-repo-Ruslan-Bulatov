@@ -40,4 +40,74 @@
 	
 	docker image rm image_id		-delete image
 	
+		Docker compose
+		
+	index.php - <?php echo "Hello";			-create app
 	
+	Dockerfile  - From php:7.2-apache
+				- Workdir /var/www/html
+				- Copy . /var/www/html
+				- Expose 80
+				
+	docker build -t my-php-app ./php			
+				
+	docker images		-check image
+	
+	docker run -p 8001:80 -d my-php-app
+	
+	docker info 		-check info about running containers
+
+	localhost:8001 		-go to app
+
+		Dockerfile - describe 1 image and configs
+	
+		Docker compose - can describe many images and configs, docker-compose.yml
+
+	
+	docker-compose build
+	
+	docker-compose up
+	
+	docker stop wireguard		-stop container
+	
+	docker rm wireguard			-delete container
+
+	
+		Docker hub
+		
+	docker build -t bulatov14/myVPN ./wireguard			-create own image
+	
+	docker images 		-check image
+	
+	docker push bulatov14/myVPN:latest		-upload own image
+	
+	docker pull bulatov14/myVPN			-download own image
+	
+	docker run -p 3001:80 --name myVPN bulatov14/myVPN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
