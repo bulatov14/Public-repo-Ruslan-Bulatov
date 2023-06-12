@@ -60,13 +60,13 @@ services:
     restart: unless-stopped
 	
 	
-		WHERE 
-	
-	SERVERURL - change to "auto" or "server-ip-address"
-	
-	PEERS =7 		-if you need 7 devices for VPN
-	
-	/path/to/appdata/config:/config      change to         ~/wireguard/config
+			WHERE 
+		
+		SERVERURL - change to "auto" or "server-ip-address"
+		
+		PEERS =7 		-if you need 7 devices for VPN
+		
+		/path/to/appdata/config:/config      change to         ~/wireguard/config
 
 		 
 		Create and run container 
