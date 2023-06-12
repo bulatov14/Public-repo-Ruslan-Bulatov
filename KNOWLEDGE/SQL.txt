@@ -1,0 +1,147 @@
+
+	itproger.com
+	
+		 
+0) show databases;
+	
+1)	CREATE DATABASE shop;
+
+2)	DROP DATABASE shop; 		/*delete database*/
+
+number - integer INT
+VARCHAR - string less 255 symbols
+TEXT - string less 65535 symbols
+DATE - date
+
+3)	CREATE TABLE users (
+		id INT(2)
+	);
+
+4)	DROP TABLE users(); 		/* delete table in the database*/
+
+- 	CREATE TABLE people(
+		id INT NOT NULL AUTO_INCREMENT,
+		name VARCHAR(30),
+		email VARCHAR(40),
+		bio TEXT,
+		birth DATE,
+		PRIMARY KEY(id)
+	);
+	
+5)	ALTER TABLE people ADD pass VARCHAR(32);		 /* add new column "pass" to the table*/ 
+
+6)	ALTER TABLE people DROP COLUMN pass;             /* drop column "pass" */
+
+7)  ALTER TABLE people ADD bio VARCHAR(32), ADD EMAIL VARCHAR(32);		/*ADD SEVERAL COLUMNS*/
+
+8)	INSERT INTO people (name, bio, birth, email) VALUES('Алексей', 'Программист', '2000-04-04', 'test@mail.ru');               /* add string */
+
+9)	ALTER TABLE people CHANGE birth age DATE NOT NULL;
+
+10)	INSERT INTO people (name, bio, birth)		/*множественное добавление*/
+		VALUES
+		('Alex', 'tester', '2000-05-05'),
+		('Bob', 'tester', '2000-06-06'),
+		('Den', 'tester', '2000-08-08');	
+
+11)	UPDATE people SET `name` = 'Максим' WHERE id = 5;		/*обновление значений*/
+
+12)	UPDATE people SET `bio` = 'lead' WHERE name = 'Иван' AND id = 5;
+
+13) DELETE FROM people WHERE id=2; 
+
+14) SELECT * FROM people;
+
+15) SELECT name, bio FROM people;
+
+16) SELECT name, bio FROM people WHERE id>1 AND id<5;
+
+17) SELECT * FROM people WHERE id<>3;
+
+18) SELECT * FROM shop WHERE birth IS NULL;
+
+19) SELECT * FROM people WHERE name='Fox' OR email='w@w.com';
+
+20) SELECT * FROM new LIMIT 2,3;		/*вывод полей 3-5, в начале пропускаем 2, затем выводим 3 */
+
+21) SELECT * FROM people ORDER BY name;			/*sort by name*/
+
+22) SELECT * FROM people ORDER BY id DESC;		/* sort */
+
+23) SELECT * FROM people WHERE id BETWEEN 3 AND 6 AND id<>4 ORDER BY id DESC LIMIT 2;
+
+24) SELECT * FROM people WHERE id IN(5,2,4) ORDER BY DESC;		/* вывести поля 5,2,4 в обратном порядке */
+
+25) SELECT * FROM people WHERE name LIKE 'm%'		/* вывести поля, начинающиеся на М */
+
+26) SELECT * FROM students INNER JOIN posts ON students.id = posts.user_id		/* покажет пересекающиеся значения*/ 
+	
+	SELECT * FROM students, posts where students.id = posts.user_id
+
+27) SELECT * FROM students left JOIN posts ON students.id = posts.user_id		/** покажет INNER JOIN + записи из left/
+
+28) SELECT * FROM students full outer JOIN posts ON students.id = posts.user_id		/** покажет INNER JOIN + записи из left + right/
+
+29) select count(*) from people;		/* посчитать людей */
+
+30) select count(*) from people where id>3;		/* посчитать людей с id >3*/
+
+31) SELECT COUNT(*) FROM `people` WHERE name like 'A%';			/* посчитать людей с именем на А */
+
+32) select avg(id) from people;		/* средняя по id */		
+
+33) select sum(id) from people;		/* суммируем все id */
+
+
+1. create - добавить
+
+2. drop - удалить
+
+3. New column     - ALTER TABLE people ADD name VARCHAR(32);		(5)
+
+4. Change column  - ALTER TABLE people CHANGE birth age DATE;		(9)
+
+5. New string     - INSERT INTO people (name, bio) VALUES ('Bob','tester');		(8)
+
+6. Update values  - UPDATE people SET name='Bob' WHERE name='Russell';		(11)
+
+	       DB	           		  column						string
+		   
+Create	CREATE database ...		ALTER TABLE...ADD			INSERT INTO a(bio) VALUES()
+
+Delete	DROP database ...		ALTER TABLE...DROP			DELETE FROM...WHERE name='';
+
+Change							ALTER TABLE...CHANGE		UPDATE...SET bio='' WHERE name=''
+
+
+34) show databases;
+
+34-2) create database students;
+
+35) use students;
+
+36) show tables;
+
+37) DESC courses; - показать значения таблицы
+
+
+		***********************************************************
+
+	
+		Задания с собеса
+	
+	1) Напишите текст запроса на создание таблицы в базе данных (например, это книжная полка с полями: “номер ID”, “название книги”, “автор” и “дата создания книги”). Результат покажите через sharescreen, в блокноте или любом другом текстовом редакторе.
+	
+	2) Напишите запрос SELECT, который выведет из этой таблицы последние 5 книг, написанные определенным автором. Например, Л.Н. Толстой.
+	
+	3) update table set author='Dostoevskiy' where author='Tolstoy'
+
+
+
+
+
+
+
+
+
+
