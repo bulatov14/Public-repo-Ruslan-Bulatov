@@ -1,0 +1,117 @@
+
+		VPN
+		
+		https://igancev.ru/2021-02-21-vpn-wireguard-docker
+	
+	VPS - 1 core, 512 Ram, KVM virtualization
+	
+		1) check KVM - dmidecode -s system-manufacturer
+	
+	KVM = QEMU
+VMware ESX = VMware, Inc
+OVH KVM = OpenStack Foundation
+Qemu (emulated) = Bochs;
+Virtuozzo = /dev/mem: Permission denied
+
+		2) dmesg | grep -i virtual
+		
+	ssh root@ip-address
+	
+	apt update && apt upgrade -y
+
+	apt install docker.io
+	
+	apt install docker-compose
+	
+	mkdir -p ~/wireguard/config
+	
+	nano ~/wireguard/docker-compose.yml
+
+
+	
+---
+version: "2.1"
+services:
+  wireguard:
+    image: lscr.io/linuxserver/wireguard:latest
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SERVERURL=wireguard.domain.com #optional
+      - SERVERPORT=51820 #optional
+      - PEERS=1 #optional
+      - PEERDNS=auto #optional
+      - INTERNAL_SUBNET=10.13.13.0 #optional
+      - ALLOWEDIPS=0.0.0.0/0 #optional
+      - PERSISTENTKEEPALIVE_PEERS= #optional
+      - LOG_CONFS=true #optional
+    volumes:
+      - /path/to/appdata/config:/config
+      - /lib/modules:/lib/modules #optional
+    ports:
+      - 51820:51820/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped
+	
+	
+		WHERE 
+	
+	SERVERURL - change to "auto" or "server-ip-address"
+	
+	PEERS =7 		-if you need 7 devices for VPN
+	
+	/path/to/appdata/config:/config      change to         ~/wireguard/config
+
+		 
+		Create and run container 
+
+	cd ~/wireguard
+	docker-compose up -d
+
+	docker ps		-check container
+	
+		
+		Add client devices - QR
+		
+	docker exec -it wireguard /app/show-peer 1		-for QR code
+	
+		
+		Add computer 
+		
+	~/wireguard/config		-go to the folder and download file peer2.conf - use this file in Wireguard app on the desktop
+	
+	
+		Delete Wireguard from SERVER
+		
+	docker stop wireguard		-stop container
+	
+	docker rm wireguard			-delete container
+	
+	docker rmi lscr.io/linuxserver/wireguard		-delete image
+	
+	rm -rf ~/wireguard			-delete config folder
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
