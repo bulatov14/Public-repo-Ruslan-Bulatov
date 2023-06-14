@@ -1,0 +1,119 @@
+
+		Автоматизация тестирования+Программирование на Python с нуля - https://www.udemy.com/course/python-3-1/
+	
+	Python - python.org - download
+	
+	pycharm - jetbrains.com - community edition - download
+	
+		markup during installation - Community edition, .py, Add "bin"
+		
+	go pycharm - New project - Interpreter Python 3. - Create
+	
+	New file - Create 
+		
+		- print("Hello")
+		
+	int - целое число
+	float - с плавающей запятой 5.5, 10.02
+	str - строки "hello"
+	boolean - true/false
+	
+	Переменная/идентификатор
+	
+		- 1й символ - буква или _
+		- с большой буквы нельзя
+		- нельзя пробелы или спец символы
+		- нельзя названия функций - print/num/var
+		
+		first_name (firstName нельзя)
+		
+	Коммент - выделить строки - ctrl+?
+	
+n1=5
+print(type(n1)) 	/int
+	
+n3=3
+print(n3**3) 		/27 
+	
+n1=50
+n2=8
+result=n1//n2
+print(result)		/6
+
+n1=50
+n2=8
+result=n1/n2
+print(int(result))		/6
+
+n1=50
+n2=8
+result=n1%n2
+print(result)		/2 - остаток
+
+n1 = 5
+n2 = 5
+print(n1==n2)		/true
+
+n1 = 4
+n2 = 5
+print(n1==n2)		/false
+
+print(round(10/3))		/3
+
+print(round(10/3, 4))		/3.3333 - 4 знака после запятой
+
+n1=10.99
+print(int(n1))		/10 - округление до целого
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
