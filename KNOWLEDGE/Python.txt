@@ -29,54 +29,157 @@
 		
 	Коммент - выделить строки - ctrl+?
 	
-n1=5
+n1 = 5
 print(type(n1)) 	/int
 	
-n3=3
+	
+n3 = 3
 print(n3**3) 		/27 
 	
-n1=50
-n2=8
+	
+n1 = 50
+n2 = 8
 result=n1//n2
 print(result)		/6
 
-n1=50
-n2=8
-result=n1/n2
+
+n1 = 50
+n2 = 8
+result = n1/n2
 print(int(result))		/6
 
-n1=50
-n2=8
-result=n1%n2
+
+n1 = 50
+n2 = 8
+result = n1%n2
 print(result)		/2 - остаток
+
 
 n1 = 5
 n2 = 5
 print(n1==n2)		/true
 
+
 n1 = 4
 n2 = 5
 print(n1==n2)		/false
 
+
 print(round(10/3))		/3
+
 
 print(round(10/3, 4))		/3.3333 - 4 знака после запятой
 
-n1=10.99
+
+n1 = 10.99
 print(int(n1))		/10 - округление до целого
 
 
+Конкатинация - складывание строк
 
 
+str1 = 'hello'
+print(dir(str1))		/выводит все возможные команды
 
 
+str1 = 'hello'
+print(str1.upper())		/все буквы капс локом
 
 
+a = 'Alex'
+b = 'Hello {}'
+result = b.format(a)
+print(result)			/Hello Alex
 
 
+name = 'Alex'
+surname = 'Orlov'
+a = '{} {}'
+result = a.format(name, surname)
+print(result)							/Alex Orlov
 
 
+name = 'Alex'
+surname = 'Orlov'
+result = f'{name} {surname}'
+print(result)							/f string нотация
 
+
+a = input()
+print(a)			/в input по дефолту - строковый тип данных
+
+
+a = int(input())
+print(a)			/ <class 'str'>
+
+
+def summ():
+	print("hello")
+summ()					/hello
+
+
+def summ(n1, n2):
+    result = n1 +n2
+    print(result)
+summ(10,20)				/30
+
+
+def summ(n1, n2):
+    result = n1 +n2
+    print(result)
+summ(n2 = 'World', n1 = 'Hello')		/HelloWorld
+
+
+def hi(name = 'Alex'):
+    print('Hello ' + name)
+hi()									/Hello Alex
+
+
+var1 = 100 #глобальная переменная
+var2 = 20 #глобальная переменная
+def summ():
+    result = var1 + var2
+    print(result)
+summ()
+def sub():
+    result = var1 - var2
+    print(result)
+sub()									/120 80
+
+
+age = 25
+if age == 25:
+    print('I am 25')
+else:
+    print('I am not 25')			/I am 25
+	
+	
+age = 24
+if age == 25:
+    print('I am 25')
+elif age > 25:
+    print('I am more 25')
+else:
+    print('I am not 25')			/I am not 25
+
+
+print('Input pin code')
+pin = 1234
+userpin = int(input())
+if pin == userpin:
+    print('How much do you want cash')
+else:
+    print('Input right pin code, you have 2 attempts')
+    userpin = int(input())
+    if pin == userpin:
+        print('How much do you want cash')
+    else:
+        print('Input right pin code, , you have only 1 attempt')
+        userpin = int(input())
+        if pin == userpin:
+            print('How much do you want cash')
+        else:
+            print('Yuor card is blocked')								/ATM
 
 
 
