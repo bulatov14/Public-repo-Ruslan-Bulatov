@@ -5,7 +5,7 @@
 	
 	VPS - 1 core, 512 Ram, KVM virtualization
 	
-		1) check KVM - dmidecode -s system-manufacturer
+		1 option - check KVM - dmidecode -s system-manufacturer
 	
 	KVM = QEMU
 VMware ESX = VMware, Inc
@@ -13,21 +13,29 @@ OVH KVM = OpenStack Foundation
 Qemu (emulated) = Bochs;
 Virtuozzo = /dev/mem: Permission denied
 
-		2) dmesg | grep -i virtual
+		2 option - dmesg | grep -i virtual
 		
-	ssh root@ip-address
+	To do:	
+		
+1) ssh root@ip-address
 	
-	apt update && apt upgrade -y
+2) apt update && apt upgrade -y
 
-	apt install docker.io
+3) apt install docker.io
 	
-	apt install docker-compose
+4) apt install docker-compose
 	
-	mkdir -p ~/wireguard/config
+5) mkdir -p ~/wireguard/config
 	
-	nano ~/wireguard/docker-compose.yml
+6) nano ~/wireguard/docker-compose.yml
 
+7) Paste text from Custom file under and Save
 
+			**************************************************
+
+			Start file
+	
+			**********************************************
 	
 ---
 version: "2.1"
@@ -60,42 +68,82 @@ services:
     restart: unless-stopped
 	
 	
-			WHERE 
+			***************************************************************
+			
+						WHERE 
 		
 		SERVERURL - change to "auto" or "server-ip-address"
 		
 		PEERS =7 		-if you need 7 devices for VPN
 		
 		/path/to/appdata/config:/config      change to         ~/wireguard/config
+		
+			**********************************************************
+			
+			Custom file - under
+			
+			**************************************************************
+			
+---
+version: "2.1"
+services:
+  wireguard:
+    image: lscr.io/linuxserver/wireguard:latest
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SERVERURL=auto #optional
+      - SERVERPORT=51820 #optional
+      - PEERS=5 #optional
+      - PEERDNS=auto #optional
+      - INTERNAL_SUBNET=10.13.13.0 #optional
+      - ALLOWEDIPS=0.0.0.0/0 #optional
+      - PERSISTENTKEEPALIVE_PEERS= #optional
+      - LOG_CONFS=true #optional
+    volumes:
+      - ~/wireguard/config:/config
+      - /lib/modules:/lib/modules #optional
+    ports:
+      - 51820:51820/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped
+			
+					
 
 		 
 		Create and run container 
 
-	cd ~/wireguard
-	docker-compose up -d
+8) cd ~/wireguard
+9) docker-compose up -d
 
-	docker ps		-check container
+10) docker ps		-check container
 	
 		
 		Add client devices - QR
 		
-	docker exec -it wireguard /app/show-peer 1		-for QR code
+11) docker exec -it wireguard /app/show-peer 1		-for QR code
 	
 		
 		Add computer 
 		
-	~/wireguard/config		-go to the folder and download file peer2.conf - use this file in Wireguard app on the desktop
+12) ~/wireguard/config		-go to the folder and download file peer2.conf - use this file in Wireguard app on the desktop
 	
 	
 		Delete Wireguard from SERVER
 		
-	docker stop wireguard		-stop container
+13) docker stop wireguard		-stop container
 	
-	docker rm wireguard			-delete container
+14) docker rm wireguard			-delete container
 	
-	docker rmi lscr.io/linuxserver/wireguard		-delete image
+15) docker rmi lscr.io/linuxserver/wireguard		-delete image
 	
-	rm -rf ~/wireguard			-delete config folder
+16) rm -rf ~/wireguard			-delete config folder
 	
 
 
