@@ -1,0 +1,14 @@
+
+	UI for Ubuntu
+	
+1) sudo apt update && sudo apt upgrade
+
+2) sudo apt install xubuntu-desktop
+
+	or
+	
+   sudo apt install xubuntu-desktop
+
+3) sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+
+4) sudo apt install xrdp xorgxrdp
