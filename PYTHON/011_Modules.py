@@ -21,3 +21,6 @@ import random
 r = random.randrange(0, 1000000)
 user = 'User'
 print(user + str(r))
+
+from doc import math
+print(math.pi)
