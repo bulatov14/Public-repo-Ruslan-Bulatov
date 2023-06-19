@@ -4,7 +4,7 @@ from pyowm import OWM
 
 # ---------- FREE API KEY examples ---------------------
 
-owm = OWM('bb5024f7d713d3944ab88fdada3582cc')
+owm = OWM('my_API_key')
 mgr = owm.weather_manager()
 
 place = input('Input your City: ')
