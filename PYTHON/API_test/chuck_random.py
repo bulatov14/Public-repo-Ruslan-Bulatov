@@ -6,7 +6,7 @@ class Test_new_joke():
     def __init__(self):
         pass
 
-    def test_create_new_random_joke(self):
+    def test_create_new_random_joke(self):      # create method
         """Create random joke"""
 
         url = 'https://api.chucknorris.io/jokes/random'
@@ -34,5 +34,5 @@ class Test_new_joke():
             print('valeu has no word Chuck')
 
 
-random_joke = Test_new_joke()
-random_joke.test_create_new_random_joke()
+random_joke = Test_new_joke()       # переменная, является экземпляром класса Test_new_joke()
+random_joke.test_create_new_random_joke()       # вызов метода test_create_new_random_joke()
